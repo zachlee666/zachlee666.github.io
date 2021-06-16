@@ -1,0 +1,21 @@
+extends base
+
+block title
+    title= page.title + ' | ' + config.title
+
+block content
+    include _partial/common.pug
+    .l-post.l-post-art
+        article.p-art
+            +post-header(page)
+            .p-content
+                != page.content
+            if theme.copyright
+                +post-copyright(page)
+        +post-footer(page)
+        include _partial/post-toc.pug
+
+    section.p-ext
+        include _partial/post-jump.pug
+        if page.comments
+            include _partial/comments.pug

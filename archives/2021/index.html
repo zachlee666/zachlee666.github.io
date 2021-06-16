@@ -1,0 +1,27 @@
+extends base
+
+block title
+    if page.category
+        title= page.category + ' | ' + config.title
+    if page.tag
+        title= page.tag + ' | ' + config.title
+    if page.archive
+        title= __('archive') + ' | ' + config.title
+
+block content
+    section.p-archive.p-ext.p-common
+        if page.category || page.tag
+            h1.page-title=  __(page.category || page.tag)
+        else
+            h1.page-title= __('archive')
+
+        //- refer: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_groupby
+        each posts, year in page.posts.toArray().reduce((r, v, i, a, k = -v.date.format('YYYY')) => ((r[k] || (r[k] = [])).push(v), r), {})
+            h2= -year
+            ul.list
+                for post in posts
+                    li
+                        span.date= post.date.format('MM/DD') + ' '
+                        a(href=url_for(post.path), title=post.title)
+                            +title(post)
+    include _partial/paginator.pug
