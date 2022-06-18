@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/planet.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/planet32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/planet16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.5.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:null},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script><script src="/js/config.js"></script>
+<meta name="description" content="An Optimized Deep Learning-based Trust Mechanism in VANET for Selfish Node Detection">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献详读(二)：一种优化的基于深度学习的VANET自私节点信任检测机制">
+<meta property="og:url" content="http://example.com/2022/05/27/paper2/index.html">
+<meta property="og:site_name" content="一隅">
+<meta property="og:description" content="An Optimized Deep Learning-based Trust Mechanism in VANET for Selfish Node Detection">
+<meta property="og:locale">
+<meta property="og:image" content="https://s2.loli.net/2022/06/18/Mpmeu97dkPJLa5N.png">
+<meta property="article:published_time" content="2022-05-27T04:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-18T17:34:21.382Z">
+<meta property="article:author" content="Zach Lee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/18/Mpmeu97dkPJLa5N.png">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/paper2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;05&#x2F;27&#x2F;paper2&#x2F;&quot;,&quot;path&quot;:&quot;2022&#x2F;05&#x2F;27&#x2F;paper2&#x2F;&quot;,&quot;title&quot;:&quot;文献详读(二)：一种优化的基于深度学习的VANET自私节点信任检测机制&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>文献详读(二)：一种优化的基于深度学习的VANET自私节点信任检测机制 | 一隅</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">一隅</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Zach的记录空间</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>时间轴</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Introduction"><span class="nav-number">2.</span> <span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Related-Work"><span class="nav-number">3.</span> <span class="nav-text">2.Related Work</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Basic-Method"><span class="nav-number">4.</span> <span class="nav-text">3.Basic Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Proposed-Method"><span class="nav-number">5.</span> <span class="nav-text">4.Proposed Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Result-and-Discussion"><span class="nav-number">6.</span> <span class="nav-text">5.Result and Discussion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Conclusion"><span class="nav-number">7.</span> <span class="nav-text">6. Conclusion</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zach Lee"
+      src="https://i.loli.net/2021/06/17/OTASdYsBDUgIznv.jpg#/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Zach Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/zachlee666@163.com" title="E-Mail → zachlee666@163.com"><i class="fa fa-at fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055584305620" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055584305620" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Zach_M_Lee" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Zach_M_Lee" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    
+    <div class="post-gallery-image">
+      <img src="https://s2.loli.net/2022/06/18/Mpmeu97dkPJLa5N.png" itemprop="contentUrl">
+    </div>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/paper2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/06/17/OTASdYsBDUgIznv.jpg#/images/avatar.gif">
+      <meta itemprop="name" content="Zach Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一隅">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文献详读(二)：一种优化的基于深度学习的VANET自私节点信任检测机制
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-27 12:00:00" itemprop="dateCreated datePublished" datetime="2022-05-27T12:00:00+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-06-19 01:34:21" itemprop="dateModified" datetime="2022-06-19T01:34:21+08:00">2022-06-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%96%87%E7%8C%AE%E8%AF%A6%E8%AF%BB/" itemprop="url" rel="index"><span itemprop="name">文献详读</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><strong>An Optimized Deep Learning-based Trust Mechanism in VANET for Selfish Node Detection</strong></p>
+<span id="more"></span>
+
+<p>作者：Jyothi N, etc.<br>期刊：International Journal of Pervasive Computing and Communications.<br>年份：2021.</p>
+<p>DOI网址：<a target="_blank" rel="noopener" href="https://doi.org/10.1108/IJPCC-09-2021-0239">https://doi.org/10.1108/IJPCC-09-2021-0239</a></p>
+<br />
+
+<h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a><strong>Abstract</strong></h4><p><strong>目的</strong>——本研究旨在开发一种基于优化的深度学习的车联网(VANET)中的信任机制，用于自私节点检测。</p>
+<p><strong>设计/方法/过程</strong>——作者构建了一个基于深度学习的优化信任机制，该机制可以删除由自私VANET节点生成的恶意内容。这个基于深度学习的优化信任框架是基于深度信任网络的Red Fox优化算法的结合。提出了一种新的基于深度学习的优化模型以非视距(nLoS)条件下的车辆类型，且满足VANET环境的安全性和隐私要求。通过使用车辆位置可以验证消息的真实性和完整性，以确定信任级别，通过距离和时间确认位置。</p>
+<p><strong>研究发现</strong>——利用基于深度学习的优化信任模型检测视线和非视线条件下的障碍物，降低事故率。与之前的方法相比，实验预测结果在准确率、精密度、召回率、计算成本和通信开销方面都更优秀。</p>
+<p><strong>实际意义</strong>——实验使用NS-2进行，并用不同的性能指标进行评估，包括计算成本、准确性、精确性、召回率和简单攻击和意见篡改攻击的通信开销。然而，该方法在计算成本、准确率、精密度、召回率、通信开销等方面均优于其他现存方法，如k最近邻(K-nearest neighbor, KNN)、人工神经网络(Artificial Neural Network, ANN)等。因此，该方法对简单攻击和意见篡改攻击具有较强的抗干扰能力。</p>
+<p><strong>原创性/价值</strong>——本文提出了一种基于深度学习的优化信任框架，用于VANET中的信任预测。基于深度学习的优化信任模型用于评估事件消息发送者和事件消息的完整性和准确性。</p>
+<br />
+
+<p><strong>关键词</strong>：VANET，深度置信网络，Red fox算法，LoS，nLoS</p>
+<br />
+
+<h4 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a><strong>1. Introduction</strong></h4><p>车载随意移动网络(VANET)是由基础设施和车辆组成，是智能交通系统的核心组成部分。车辆到车辆(V2V)和车辆到基础设施(V2I)之间的通信使用VANET进行。在VANET中，安全性是设计自主设备最关键的标准。车辆可能在这个网络上被误报。</p>
+<p>移动节点之间正确、可靠的数据通信是VANET中最重要的挑战。数据可信度或不可信度的检测在任何通信中都很重要。使用基于拓扑的路由协议来连接信息，如最优链路状态路由协议、最大化生命周期、基于预测的AODV和基于预测的临时按需距离向量路由(Demand Distance Vector Routing)。现有技术具有更高的计算复杂度、更长的执行时间、有效性时间的改进、稳定性差、可靠性差、没有隐私保护策略。为了克服这些问题，提出了一种基于深度学习的VANET信任预测优化信任框架。</p>
+<p>该工作的主要目标如下：</p>
+<p>（1） 在LoS和nLoS条件下，验证提出的基于VANET的信任模型。</p>
+<p>（2） 在信任预测的过程中，使用Red Fox优化(Red Fox Optimization, RFO)算法提高了深度信念网络(DBN)的性能。</p>
+<p>（3） 通过简单攻击和意见干扰攻击，使用各种性能指标验证了所提方法的性能。</p>
+<br />
+
+<p>第2节描述了相关的工作；第3节解释了用于开发所提出的方法的技术，如DBN和RFO算法；第4节描述了提出的方法工作；第5节中讨论的结果；第6节中进行总结。</p>
+<br />
+
+<h4 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2.Related Work"></a><strong>2.Related Work</strong></h4><p>基于VANET的隐私保护通信方案是由Al-Shareeda等人提出。VANET设计涉及到一些集成核心的特性，如动态变化的拓扑结构、分布式网络和自主性(autonomy)。</p>
+<p>除了椭圆曲线密码法外，还可以采用一种基于身份的加密方案。进行安全属性、安全性证明、随机预测模型和Burrows–Abadi–Needham逻辑等安全性分析。由Kumar等人提出的信标信息独立的地理路由算法(The Beacon Information Independent Geographic Routing algorithm, BIIR)。</p>
+<br />
+
+<h4 id="3-Basic-Method"><a href="#3-Basic-Method" class="headerlink" title="3.Basic Method"></a><strong>3.Basic Method</strong></h4><p>介绍深度信念网络和Red Fox算法。略。</p>
+<br />
+
+<h4 id="4-Proposed-Method"><a href="#4-Proposed-Method" class="headerlink" title="4.Proposed Method"></a><strong>4.Proposed Method</strong></h4><p>本文提出了一种基于深度学习的信任预测优化模型。传统的DBN在高阶网络结构方面具有更好的编码能力、快速推理、故障诊断等优点，并取得了良好的训练效果。然而，DBN存在预测质量下降，需要大量数据，训练极其昂贵，需要数百台机器等问题。因此，RFO算法可用于提高DBN性能的收敛速度，优化计算复杂性，泛化性能(generalization performance)，提高预测精度等。由于RFO算法在最优解确定的情况下具有最优性能，搜索效率高，多维测试函数的优化能力。</p>
+<p>使用DBN-RFO算法对发送者和消息进行了消息完整性和准确性的测试。使用车辆位置来验证消息的完整性和真实性，以确定信任级别。使用距离和时间来验证该位置。它根据时间和距离来识别发送方是否在其实际位置上。根据plausibility（合理性？似然性？），使用基于周围车辆的深度学习的优化信任来评估消息的信任级别。这三个主要模块用于确定事件消息的信任级别，自私节点使用一个决策制定模块来处理不准确的信息。</p>
+<p>基于深度学习的优化信任模块框架如下图所示。</p>
+<p><img src="https://s2.loli.net/2022/06/19/oqnyZXJrgp3FHu9.png" alt="paper2_1.png"></p>
+<p><strong>4.1 基于合理性的测量模块</strong></p>
+<p>不准确信息的存在是车辆网络中的问题之一。数据的可靠性通过一个重要的因素合理性来保证。使用合理性检查系统可以正确地计算出信任值。在本研究中，通过时间和距离这两个子模块来验证位置。</p>
+<p>接收数据的合理性采用位置验证。合理性检查将检测发送方是否包含其真实位置。通过测量接收方和发送方之间的距离来验证所称的位置。信标和事件消息都包括地理坐标，以使用距离来验证位置。车辆的地理坐标、加速度和速度等信息由信标信息执行。由于VANET环境产生了LoS和nLoS条件，两种方法如下：</p>
+<p>（1）基于LoS(视距)的条件：使用信标和事件消息提到两个坐标计算二维车辆之间的距离。利用mesaageE和mesaageB中的上述坐标测量了<em>v</em>和<em>Y</em>之间的距离，即Dr(<em>v</em>,<em>Y</em>)和Db(<em>v</em>,<em>Y</em>)，然后通过比较这两种距离测量来评估可信性水平。</p>
+<p>（2）基于nLoS(非视距)的条件：其中由于可移动和不可移动的障碍，节点<em>v</em>向其他节点发送请求，以此验证<em>Y</em>的位置。移动性向量位置的坐标为(<em>ZY</em>, <em>XY</em>)。测量值的比较来自Dr(<em>v</em>,<em>Y</em>)和Db(<em>v</em>,<em>Y</em>)的距离。下面的方程解释了测量节点v与新坐标Y的距离Dr(<em>v</em>,<em>Y</em>)。<br>$$<br>D_r(v,Y)=\sqrt{|Z_v-Z_Y|^2+|X_v-X_Y|^2}<br>$$<br>移动性位置<em>Y</em>为(<em>ZY</em>, <em>XY</em>)。下面的方程解释了测量的距离。<br>$$<br>P_lausibility=\frac{|D_r-D_b|}{max(D_r,D_b)}<br>$$<br>采用基于BDN的RFO算法来检测在LoS和nLoS条件下都存在的障碍物，以降低事故率。在LoS和nLoS条件下，通过输入参数无线电信号强度、PDR、距离、速度和带宽来确定障碍物之间距离。在此阶段确定被可移动和固定物体阻塞的LoS。</p>
+<p>基于BDN的RFO算法的阈值，检测出VANET中可信和不可信的车辆。可信车辆概率值(probability)设定为1，不可信车辆的概率值(probability)设定为0。</p>
+<p><strong>4.2</strong> <strong>非视线范围的检测</strong></p>
+<p>V2V链路中对车辆环境性能的主要影响之一是包括卡车和建筑物在内的障碍。在LoS和nLoS条件下，由于在现实的VANET环境中存在的障碍，我们对安全、非安全的应用进行了评估，最后分析了阻塞条件的障碍。采用支持向量机(SVM)作为一种有监督的机器学习方法。SVM的多数投票和分类取决于距离的相似性。</p>
+<br />
+
+<h4 id="5-Result-and-Discussion"><a href="#5-Result-and-Discussion" class="headerlink" title="5.Result and Discussion"></a><strong>5.Result and Discussion</strong></h4><p>本节将讨论具有不同评估标准的仿真和网络工具。对于城市环境，使用NS2模拟器对城市移动模拟评估了拟议的研究。实验使用NS2模拟器进行，并使用不同的性能指标（计算成本computational cost、准确率accuracy、精确率precision、召回率recall、通信开销communication overhead等，以及简单的攻击和意见篡改攻击）进行评估。</p>
+<p><strong>5.1 性能验证</strong></p>
+<p>通过计算成本、准确率、精确率、召回率、通信开销等各种方法，验证了该方法的性能。</p>
+<p><strong>5.2 与最先进技术比较</strong></p>
+<p>准确率比较如下左图所示。比较不同节点数的KNN、ANN和所提出的方法信任预测准确率。ANN、KNN和所提出的方法的准确率分别为0.85%、0.82%和0.94%。</p>
+<p>精确率的比较如下右图所示。在本实验中，我们使用KNN、ANN和所提出的方法获得的精确率分别为0.79%、0.83%和0.90%。说明本文提出的方法与现有方法KNN和ANN等相比具有更高的精度。</p>
+<p><img src="https://s2.loli.net/2022/06/19/UkVwYnd2RuXIDzl.png" alt="paper2_2.png"></p>
+<p>如下左图，比较三个方法的召回率性能。KNN、ANN和所提出的方法召回率分别为0.78%、0.87%和0.91%。</p>
+<p>如下右图描述了通信开销的比较。KNN、ANN和提出的方法的通信开销分别为24ms、16ms和8ms，与现有方法相比，提出的方法提供更低的通信开销。</p>
+<p><img src="https://s2.loli.net/2022/06/19/Jn4GT2uztLEicfx.png" alt="paper2_3.png"></p>
+<p>如下图为计算成本的最新比较。KNN、ANN和所提出的方法测得的计算成本分别为17.54美元、9.93美元和3.71美元，故与KNN和ANN等现有方法相比，该方法的计算成本更低。</p>
+<p><img src="https://s2.loli.net/2022/06/19/2xOVY8fdbnaHKAu.png" alt="paper2_4.png"></p>
+<p>信任预测性能如下图所示，其中简单攻击下的信任预测如图(a)，意见篡改攻击下的信任预测如图(b)。与现有的KNN、ANN等方法相比，提出的方法在简单攻击和意见干扰攻击下信任预测过程更加优异。</p>
+<p><img src="https://s2.loli.net/2022/06/19/92lUMpj7weSAVsL.png" alt="paper2_5.png"></p>
+<br />
+
+<h4 id="6-Conclusion"><a href="#6-Conclusion" class="headerlink" title="6. Conclusion"></a><strong>6. Conclusion</strong></h4><p>本文提出了一种基于深度学习的VANET信任预测优化信任框架。采用基于深度学习的优化信任模型来评估事件消息发送者和事件消息的完整性和准确性，并降低事故率，该模型用于检测在LoS和nLoS条件下的障碍。实验使用NS2模拟器进行，并使用不同的性能指标进行评估，包括计算成本、准确率、精确率、召回率和通信开销，以及简单的攻击和意见干扰攻击。</p>
+<p>该方法在计算成本、精度、精度、召回率和通信开销方面都比KNN和ANN等现有方法具有更好的预测结果。因此，该方法可以有效地抵御简单攻击和意见干扰攻击。</p>
+<p>但是本文开发的方法仅可用于VANET中的信任预测。因此，在未来该方法还可以继续扩展设计到回收技术(recovery techniques)中。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/20/paper1/" rel="prev" title="文献详读(一)：使用监管下的机器学习技术利用虚假反馈检测增强云的可信度">
+                  <i class="fa fa-chevron-left"></i> 文献详读(一)：使用监管下的机器学习技术利用虚假反馈检测增强云的可信度
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zach Lee</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">18k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">16 分钟</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
