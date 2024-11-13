@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Zhiqi Li"
   pronouns         : # example: "she/her"  
   bio              : "Master student in Shanghai Institute of Microsystem and Information Technology, Chinese Academy of Sciences"
