@@ -2,8 +2,10 @@
 title: 如何配置Anaconda+PyTorch+Spyder机器学习环境
 date: 2023-09-07 14:00:00
 photos: https://s2.loli.net/2023/09/08/g6fTo7WmswtvBcz.png
-categories:
- - 科研
+permalink: /posts/anaconda-pytorch-spyder/
+tags:
+  - posts
+  - tips
 ---
 
 ****
