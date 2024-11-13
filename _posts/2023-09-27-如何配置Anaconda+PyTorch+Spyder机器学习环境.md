@@ -5,6 +5,7 @@ permalink: /posts/anaconda-pytorch-spyder/
 tags:
   - posts
   - tips
+  - learning
 ---
 
 通过这篇博文，教你手把手配置好一套方便常用的机器学习/深度学习环境（附CUDA+PyTorch-gpu版配置方法）
