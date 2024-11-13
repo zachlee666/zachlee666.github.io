@@ -1,7 +1,7 @@
 ---
-title: 'Blog Post number 1'
+title: 'Example Blog Post'
 date: 2012-08-14
-permalink: /posts/2012/08/blog-post-1/
+permalink: /posts/example-blog-post
 tags:
   - cool posts
   - category1
