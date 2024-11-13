@@ -1,7 +1,6 @@
 ---
 title: 如何配置Anaconda+PyTorch+Spyder机器学习环境
 date: 2023-09-07 14:00:00
-photos: https://s2.loli.net/2023/09/08/g6fTo7WmswtvBcz.png
 permalink: /posts/anaconda-pytorch-spyder/
 tags:
   - posts
@@ -45,7 +44,7 @@ Anaconda 是一个数据科学和机器学习的综合工具包，而PyTorch 是
 
 下载安装包后，双击打开，next；选择All Users
 
-![conda_installation1.png](https://s2.loli.net/2023/09/08/Ke8OiPvG6jD7mVQ.png)
+![conda_installation1.png](images/conda_installation1.png)
 
 下一步选择安装路径，如果C盘空间不充裕请改换到其他硬盘。
 
