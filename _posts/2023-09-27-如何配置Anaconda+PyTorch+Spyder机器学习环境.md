@@ -1,7 +1,7 @@
 ---
 title: 如何配置Anaconda+PyTorch+Spyder机器学习环境
 date: 2023-09-07
-permalink: /posts/anaconda-pytorch-spyder/
+permalink: /posts/2023-09-27-how-to-deploy-anaconda-pytorch-spyder
 tags:
   - posts
   - tips
