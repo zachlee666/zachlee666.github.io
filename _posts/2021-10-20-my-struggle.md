@@ -1,5 +1,5 @@
 ---
-title: '我的奋斗观'
+title: 我的奋斗观
 date: 2021-10-20
 permalink: /posts/2021-10-20-my-struggle
 tags:
