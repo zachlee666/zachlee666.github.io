@@ -1,7 +1,7 @@
 ---
-title: 交响乐杂谈（一） 罗西尼《威廉·退尔序曲》
+title: '交响乐杂谈（一） 罗西尼《威廉·退尔序曲》'
 date: 2021-08-27
-permalink: /posts/williamtell
+permalink: /posts/2021-08-27-williamtell
 tags:
   - posts
   - music
