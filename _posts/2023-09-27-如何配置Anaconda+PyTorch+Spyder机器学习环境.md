@@ -39,7 +39,7 @@ Anaconda 是一个数据科学和机器学习的综合工具包，而PyTorch 是
 
 下载安装包后，双击打开，next；选择All Users
 
-![conda_installation1.png](/images/editing-talk.png)
+![conda_installation1.png](images/conda_installation1.png)
 
 下一步选择安装路径，如果C盘空间不充裕请改换到其他硬盘。
 
