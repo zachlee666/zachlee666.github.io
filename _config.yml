@@ -26,9 +26,9 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Master student in Shanghai Institute of Microsystem and Information Technology, Chinese Academy of Sciences"
   location         : "Shanghai, China"
-  employer         : "<a href='mailto:Chinese Academy of Sciences'>https://english.cas.cn/</a>"
+  employer         : "Chinese Academy of Sciences"
   uri              : # URL
-  email  : "<a href='mailto:lizhiqi@mail.sim.ac.cn'>lizhiqi@mail.sim.ac.cn</a>"
+  email  : "lizhiqi@mail.sim.ac.cn"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
