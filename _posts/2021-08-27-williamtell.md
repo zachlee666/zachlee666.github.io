@@ -9,11 +9,11 @@ tags:
 
 “尽管前途漫长，处境艰辛，但我们更要竭力结束这无尽邪恶，让和平降临家园。”
 
-![Alps-1](/posts_/images/2021-08-27-williamtel/Alps-1.jpeg)
+![Alps-1](/_posts/images/2021-08-27-williamtel/Alps-1.jpeg)
 
 ### **音乐家介绍**
 
-![rossini](/posts_/images/2021-08-27-williamtel/Rossini.jpg)
+![rossini](/_posts/images/2021-08-27-williamtel/Rossini.jpg)
 
 罗西尼(Gioaehino Rossini,1792～1868)，意大利古典喜歌剧的杰出代表。由于父亲受到政治牵连人狱，罗西尼很小就先后被送到熟肉店和铁匠铺当学徒，很少有机会接受音乐教育。
 虽然家境不好，但是罗西尼拥有一副好嗓子和聪慧的领悟能力，他自学成才，专门抄写海顿、莫扎特等名家的乐谱以学习作曲技术。15岁时得以人波伦亚音乐学校系统学习作曲理论，毕业后投人歌剧的专门创作。
@@ -47,7 +47,7 @@ tags:
 **4.终曲(8:39-12:09)**
 号角声突然闻人，小号的声音洪亮而催人奋进。接着，便是充满英勇刚毅性格的进行曲主题，象征着瑞士军队向敌人进军，以势不可挡的力量前进。整段情绪欢快，色彩鲜明，仿佛大家在唱着凯旋歌向胜利的明天行进。
 
-![Alps-2](/posts_/images/2021-08-27-williamtel/Alps-2.jpg)
+![Alps-2](/_posts/images/2021-08-27-williamtel/Alps-2.jpg)
 
 ### **杂记**
 
