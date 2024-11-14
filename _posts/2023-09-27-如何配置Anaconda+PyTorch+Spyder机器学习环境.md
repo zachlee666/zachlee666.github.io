@@ -45,15 +45,15 @@ Anaconda 是一个数据科学和机器学习的综合工具包，而PyTorch 是
 
 下一步，去掉第一个框框的勾选。第一项意思是将安装路径填入到系统环境变量中，勾选的话后面使用会出现问题，还是不要选（觉得手动配置有难度的当然也可以直接勾选第一个，自动配置）。
 
-![conda_installation2.png](images/conda_installation2.png)
+![conda_installation2.png](/images/conda_installation2.png)
 
 等待安装结束后（安装页面出现Installation Complete），配置环境变量。
 
 桌面右键此电脑—>属性—>高级系统设置—>环境变量—>双击path—>新建；或者直接按win键，搜索“环境变量”。
 
-![conda_installation_path1.png](images/conda_installation_path1.png)
+![conda_installation_path1.png](/images/conda_installation_path1.png)
 
-![conda_installation_path2.png](images/conda_installation_path2.png)
+![conda_installation_path2.png](/images/conda_installation_path2.png)
 
 把这几条复制到里面（注意下面写的是默认安装路径的指令，你需要根据自己实际安装目录进行改动）。
 
