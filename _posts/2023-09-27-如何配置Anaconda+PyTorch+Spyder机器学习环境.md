@@ -39,21 +39,21 @@ Anaconda 是一个数据科学和机器学习的综合工具包，而PyTorch 是
 
 下载安装包后，双击打开，next；选择All Users
 
-![conda_installation1.png](/images/conda_installation1.png)
+![conda_installation1.png](/_posts/images/conda_installation1.png)
 
 下一步选择安装路径，如果C盘空间不充裕请改换到其他硬盘。
 
 下一步，去掉第一个框框的勾选。第一项意思是将安装路径填入到系统环境变量中，勾选的话后面使用会出现问题，还是不要选（觉得手动配置有难度的当然也可以直接勾选第一个，自动配置）。
 
-![conda_installation2.png](/images/conda_installation2.png)
+![conda_installation2.png](/_posts/images/conda_installation2.png)
 
 等待安装结束后（安装页面出现Installation Complete），配置环境变量。
 
 桌面右键此电脑—>属性—>高级系统设置—>环境变量—>双击path—>新建；或者直接按win键，搜索“环境变量”。
 
-![conda_installation_path1.png](/images/conda_installation_path1.png)
+![conda_installation_path1.png](/_posts/images/conda_installation_path1.png)
 
-![conda_installation_path2.png](/images/conda_installation_path2.png)
+![conda_installation_path2.png](/_posts/images/conda_installation_path2.png)
 
 把这几条复制到里面（注意下面写的是默认安装路径的指令，你需要根据自己实际安装目录进行改动）。
 
@@ -75,13 +75,13 @@ conda --version
 
 如果出现下图的提示说明安装成功。
 
-![conda-v](/images/conda-v)
+![conda-v](/_posts/images/conda-v)
 
 此外，Windows“开始”页面——所有应用——Anaconda3的文件夹中会添加相应快捷方式。其中，Anaconda Navigator是anaconda菜单配置页面，可以理解为“主页”。
 
-![win-navigator.png](/images/win-navigator.png)
+![win-navigator.png](/_posts/images/win-navigator.png)
 
-![navigator.png](/images/navigator.png)
+![navigator.png](/_posts/images/navigator.png)
 
 <br />
 
@@ -91,7 +91,7 @@ conda --version
 
 由于conda指令服务器在境外，所以国内获取资源会比较缓慢，配置清华大学镜像下载源，可以打开Anaconda Prompt。（Prompt会经常使用，所以可以把它的快捷方式固定到“开始”页面中，或发送到桌面快捷方式）
 
-![win-prompt.png](/images/win-prompt.png)
+![win-prompt.png](/_posts/images/win-prompt.png)
 
 依次键入以下代码以配置清华源。
 
@@ -127,11 +127,11 @@ conda env list
 
 如图，如果列表中出现了pytorch，则代表环境已成功创建。
 
-![env-list.png](/images/env-list.png)
+![env-list.png](/_posts/images/env-list.png)
 
 此时，Anaconda Navigator页面左侧Environment列表里也会出现pytorch列表。
 
-![navigator-env.png](/images/navigator-env.png)
+![navigator-env.png](/_posts/images/navigator-env.png)
 
 创建好环境后，使用下面这条命令激活pytorch环境。
 
@@ -151,7 +151,7 @@ conda activate pytorch
 
 如下图，根据需要在第二栏选择操作系统，第三栏选择Conda，第五栏选择CPU，复制指令到激活pytorch后的Prompt页面并运行。
 
-![pytorch-cpu.png](/images/pytorch-cpu.png)
+![pytorch-cpu.png](/_posts/images/pytorch-cpu.png)
 
 图中默认的安装指令：
 
@@ -175,11 +175,11 @@ nvidia-smi
 
 红色框部分即为对应驱动版本，右侧是最高可以支持的CUDA版本号。 
 
-![nvidia-smi.png](/images/nvidia-smi.png)
+![nvidia-smi.png](/_posts/images/nvidia-smi.png)
 
 点击[此链接](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)查看CUDA版本对应的最低GPU驱动版本关系，或者直接参考下图。
 
-![cuda-v.png](/images/cuda-v.png)
+![cuda-v.png](/_posts/images/cuda-v.png)
 
 目前比较广泛使用的是11.5-11.8版本，不建议安装最新的12.2，因为有些环境还没有完全适配。博主是RTX 3060，驱动版本537.13，安装了CUDA 12.1，以供参考。
 
@@ -193,15 +193,15 @@ nvidia-smi
 
 首先安装CUDA，安装选自定义安装，点击下一步。
 
-![CUDA_installation1.png](/images/CUDA_installation1.png)
+![CUDA_installation1.png](/_posts/images/CUDA_installation1.png)
 
 展开CUDA。*如果你前面没有安装Visual Studio，需要把CUDA里面的Visual Studio Integration取消勾选，否则会安装不成功。
 
-![CUDA_installation2.png](/images/CUDA_installation2.png)
+![CUDA_installation2.png](/_posts/images/CUDA_installation2.png)
 
 下一步是选择安装的位置了，可以直接默认安装在C盘，也可以自定义，但是一定要记住安装的位置，后面需要用到。
 
-![CUDA_installation3.png](/images/CUDA_installation3.png)
+![CUDA_installation3.png](/_posts/images/CUDA_installation3.png)
 
 之后一直下一步，等待安装完成。
 
@@ -214,7 +214,7 @@ nvidia-smi
 回到刚才需要记住的那个CUDA的安装目录。默认为C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6。（最后的版本以自己安装的CUDA实际版本为准，后同）
 
 把cuDNN压缩包解压缩，分别把cuDNN解压出的bin、include、lib\x64三个文件夹中的.dll、.h和.lib文件复制到CUDA目录下对应文件夹里。（注意是.dll、.h和.lib文件，不是直接覆盖3个文件夹目录）。
-![cudnn.png](/images/cudnn.png)
+![cudnn.png](/_posts/images/cudnn.png)
 
 <br />
 
@@ -234,11 +234,11 @@ nvidia-smi
 
 （\*注① ProgramData是隐藏文件，设置下才能看到；\*注② 如果是CUDA 12.0及以上版本，可能不存在CUDA_SDK_PATH，那么后面3条都不需要配置）
 
-![cuda_var1.png](/images/cuda_var1.png)
+![cuda_var1.png](/_posts/images/cuda_var1.png)
 
 添加完后如图所示：
 
-![cuda_var2.png](/images/cuda_var2.png)
+![cuda_var2.png](/_posts/images/cuda_var2.png)
 
 下一步，在系统变量 **PATH** 里面添加（版本xx.x按照实际情况修改；同理，CUDA 12.0及以上第3、4和最后两条不需要配置）：
 
@@ -253,13 +253,13 @@ C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.6\common\lib\x64
 C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.6\bin\win64
 ```
 
-![cuda_var3.png](/images/cuda_var3.png)
+![cuda_var3.png](/_posts/images/cuda_var3.png)
 
-![cuda_var4.png](/images/cuda_var4.png)
+![cuda_var4.png](/_posts/images/cuda_var4.png)
 
 最后验证CUDA+cuDNN是否成功安装。Win+R打开cmd，输入nvcc -V（中间有空格，V要大写），出现了你安装的CUDA的版本信息，说明安装成功了。
 
-![cuda_var5.png](/images/cuda_var5.png)
+![cuda_var5.png](/_posts/images/cuda_var5.png)
 
 ### 5.5  安装Pytorch-gpu版
 
@@ -275,7 +275,7 @@ conda activate pytorch
 
 如下图，根据需要在第二栏选择操作系统，第三栏选择Conda，第五栏选择对应的CUDA版本（如果是CUDA12.1及以上则第一栏选择Preview）。这里选择了CUDA 11.8，复制指令到激活pytorch后的Prompt页面并运行。
 
-![pytorch-gpu.png](/images/pytorch-gpu.png)
+![pytorch-gpu.png](/_posts/images/pytorch-gpu.png)
 
 图中默认的安装指令：
 
@@ -300,7 +300,7 @@ torch.cuda.get_device_name(0)
 
 如下图，如果出现了正确的PyTorch版本，True和正确的显卡版本，则说明pytorch-gpu版安装完成并可成功使用。
 
-![pytorch_gpu_true.png](/images/pytorch_gpu_true.png)
+![pytorch_gpu_true.png](/_posts/images/pytorch_gpu_true.png)
 
 <br />
 
@@ -308,11 +308,11 @@ torch.cuda.get_device_name(0)
 
 如本文第二章所示，打开Anaconda Navigator，进入Home主页，找到Spyder，点击下面的“Install”。（我已经安装过了所以显示的是Launch）
 
-![navi-spyder.png](/images/navi-spyder.png)
+![navi-spyder.png](/_posts/images/navi-spyder.png)
 
 安装完后可以从Navigator或开始页面打开，也可以将快捷方式发送到桌面上。
 
-![spyder_open.png](/images/spyder_open.png)
+![spyder_open.png](/_posts/images/spyder_open.png)
 
 <br />
 
