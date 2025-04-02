@@ -5,8 +5,8 @@ category: Journal
 permalink: /publication/AI-Enabled-Trust-in-Distributed-Networks
 excerpt: 'This review focuses on the concept of trust and how it can be facilitated through AI, particularly utilizing machine learning and deep learning methods. Additionally, the paper provides a comprehensive comparison and analysis of three key domains in the field of AI-enabled trust: trust management (TM), intrusion detection system (IDS), and recommender systems (RS). Some open problems and challenges that currently exist in the field are manifested, and some suggestions for future work are presented.'
 date: 2023-08-18
-venue: 'Journal 1'
-<!--slidesurl: 'http://academicpages.github.io/files/slides1.pdf'-->
+venue: 'IEEE ACCESS'
+slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10224236'
 citation: 'Li, Z., Fang, W., Zhu, C., Gao, Z., & Zhang, W. (2023). AI-enabled trust in distributed networks. IEEE Access, 11, 88116-88134.'
 ---
